@@ -2,7 +2,7 @@
 
 You have two ways to use the lib:
 
-1.  With default evn variables name (which is: LOGGING_LEVEL, SERVICE_NAME and isProd which depends on NODE_ENV either including partial string 'prod' or not), the values of the variables must be defined in your process enviroment
+1.  With default env variables name (which is: LOGGING_LEVEL, SERVICE_NAME and isProd which depends on NODE_ENV either including partial string 'prod' or not), the values of the variables must be defined in your process enviroment
 
 ```js
 const { logger } = require("@leanylabs/logger");
