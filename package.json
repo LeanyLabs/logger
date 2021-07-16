@@ -10,6 +10,16 @@
   "author": "LeanyLabs",
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^16.3.2",
     "typescript": "^4.3.5"
+  },
+  "repositiry": {
+    "type": "git",
+    "url": "git+https://github.com/LeanyLabs/logger.git"
+  },
+  "dependencies": {
+    "process-env": "^2.0.2",
+    "winston": "^3.3.3",
+    "winston-console-format": "^1.0.8"
   }
 }
