@@ -2,14 +2,14 @@ import { createLogger as create, format, transports } from "winston";
 import { consoleFormat } from "winston-console-format";
 
 interface defaultLoggerParams {
-  LOGGING_LEVEL: string | undefined;
-  SERVICE_NAME?: string | undefined;
+  LOGGING_LEVEL?: string;
+  SERVICE_NAME?: string;
 }
 
 interface createLoggerParams {
-  isProd: boolean;
-  loggingLevel: string;
-  serviceNeme: string;
+  isProduction: boolean;
+  loggingLevel?: string;
+  serviceNeme?: string;
 }
 
 const NODE_ENV = process.env.NODE_ENV;
@@ -66,11 +66,11 @@ function createDevLogger({ LOGGING_LEVEL, SERVICE_NAME }: defaultLoggerParams) {
 }
 
 export function createLogger({
-  isProd,
+  isProduction,
   loggingLevel,
   serviceNeme,
 }: createLoggerParams) {
-  return isProd
+  return isProduction
     ? createProdLogger({ LOGGING_LEVEL: loggingLevel })
     : createDevLogger({
         SERVICE_NAME: serviceNeme,
