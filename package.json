@@ -1,6 +1,6 @@
 {
   "name": "@leanylabs/logger",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "lib/index.js",
   "types": "lib",
@@ -18,7 +18,6 @@
     "url": "git+https://github.com/LeanyLabs/logger.git"
   },
   "dependencies": {
-    "process-env": "^2.0.2",
     "winston": "^3.3.3",
     "winston-console-format": "^1.0.8"
   }
