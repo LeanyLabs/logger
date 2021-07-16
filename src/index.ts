@@ -28,7 +28,24 @@ function createProdLogger({ LOGGING_LEVEL }: defaultLoggerParams) {
       format.splat(),
       format.json()
     ),
-    transports: [new transports.Console()],
+    transports: [
+      new transports.Console({
+        format: format.combine(
+          //   format.padLevels(),
+          consoleFormat({
+            showMeta: true,
+            metaStrip: ["timestamp", "service"],
+            inspectOptions: {
+              depth: 3,
+              colors: true,
+              maxArrayLength: 10,
+              breakLength: 120,
+              compact: Infinity,
+            },
+          })
+        ),
+      }),
+    ],
   });
 }
 
