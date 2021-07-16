@@ -7,7 +7,7 @@ interface defaultLoggerParams {
 }
 
 interface createLoggerParams {
-  production: boolean;
+  isProduction: boolean;
   loggingLevel?: string;
   serviceNeme?: string;
 }
@@ -66,11 +66,11 @@ function createDevLogger({ LOGGING_LEVEL, SERVICE_NAME }: defaultLoggerParams) {
 }
 
 export function createLogger({
-  production,
+  isProduction,
   loggingLevel,
   serviceNeme,
 }: createLoggerParams) {
-  return production
+  return isProduction
     ? createProdLogger({ LOGGING_LEVEL: loggingLevel })
     : createDevLogger({
         SERVICE_NAME: serviceNeme,
