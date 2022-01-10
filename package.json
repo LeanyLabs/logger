@@ -18,7 +18,7 @@
     "url": "git+https://github.com/LeanyLabs/logger.git"
   },
   "dependencies": {
-    "winston": "^3.3.3",
+    "winston": "^3.3.4",
     "winston-console-format": "^1.0.8"
   }
 }
