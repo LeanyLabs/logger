@@ -1,11 +1,11 @@
 import { createLogger as create, format, transports } from "winston";
 import { consoleFormat } from "winston-console-format";
 
-interface ICreateLoggerParams extends ILoggerParams {
+export interface ICreateLoggerParams extends ILoggerParams {
   isProduction: boolean;
 }
 
-interface ILoggerParams {
+export interface ILoggerParams {
   level?: string;
   labels?: Record<string, any>;
   getCorrelationId?: () => string;

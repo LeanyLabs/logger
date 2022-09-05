@@ -1,9 +1,9 @@
 {
   "name": "@leanylabs/logger",
   "version": "1.0.7",
-  "description": "",
-  "main": "lib/index.js",
-  "types": "lib",
+  "description": "LeanyLabs Logger",
+  "main": "lib/src/index.js",
+  "types": "lib/src/index.d.ts",
   "scripts": {
     "build": "tsc -p .",
     "test": "jest"
@@ -25,6 +25,12 @@
     "winston": "^3.3.4",
     "winston-console-format": "^1.0.8"
   },
+  "files": [
+    "lib/**/*",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
   "jest": {
     "preset": "ts-jest",
     "testMatch": [
