@@ -17,7 +17,9 @@ const { createLogger } = require("@leanylabs/logger");
 
 const logger = createLogger({
   isProduction: false,
-  loggingLevel: "silly",
-  serviceNeme: "test",
+  level: "silly",
+  labels: {
+    serviceName: "test",
+  },
 });
 ```
