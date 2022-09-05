@@ -4,8 +4,8 @@ describe("logger", () => {
   it("should log with correlation id", async () => {
     const logger = createLogger({
       isProduction: true,
-      loggingLevel: "debug",
-      serviceName: "test",
+      level: "debug",
+      labels: { serviceName: "test" },
       getCorrelationId: () => {
         return "test-correlation-id";
       },
