@@ -21,9 +21,8 @@ const correlationFormat = format(function correlationFormatTransform(
     return info;
   }
 
-  let correlationId = getCorrelationId
-    ? getCorrelationId()
-    : noCorrelationIdValue;
+  let correlationId =
+    (getCorrelationId && getCorrelationId()) || noCorrelationIdValue;
 
   return {
     ...info,
