@@ -10,6 +10,7 @@ export interface ILoggerParams {
   labels?: Record<string, any>;
   getCorrelationId?: () => string;
   noCorrelationIdValue?: string;
+  inspectDepth?: number;
 }
 
 const correlationFormat = format(function correlationFormatTransform(
@@ -74,6 +75,7 @@ function createDevLogger({
   labels,
   getCorrelationId,
   noCorrelationIdValue,
+  inspectDepth,
 }: ILoggerParams) {
   return create({
     level,
@@ -96,7 +98,7 @@ function createDevLogger({
             showMeta: true,
             metaStrip: ["timestamp", "service"],
             inspectOptions: {
-              depth: 3,
+              depth: inspectDepth || 3,
               colors: true,
               maxArrayLength: 10,
               breakLength: 120,
@@ -119,6 +121,7 @@ export function createDefaultLogger() {
   const NODE_ENV = process.env.NODE_ENV;
   const LOGGING_LEVEL = process.env.LOGGING_LEVEL;
   const SERVICE_NAME = process.env.SERVICE_NAME;
+  const inspectDepth = Number(process.env.LOGGER_INSPECT_DEPTH);
 
   let isProd = NODE_ENV?.includes("prod");
 
@@ -127,6 +130,7 @@ export function createDefaultLogger() {
     labels: {
       serviceName: SERVICE_NAME,
     },
+    inspectDepth,
   };
 
   const defaultLogger = isProd
